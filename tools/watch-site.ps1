@@ -12,7 +12,7 @@ $paths = @('index.html','styles.css','script.js','about-me.html','contacts.html'
 $previous = ''; $changedAt = Get-Date
 function GitRun([string[]]$Arguments) {
   $ErrorActionPreference = 'Continue'
-  $result = & git -c core.autocrlf=false @Arguments 2>&1
+  $result = & git @Arguments 2>&1
   if ($LASTEXITCODE -ne 0) { throw ($result -join "`n") }
   return ($result | Where-Object { $_ -isnot [System.Management.Automation.ErrorRecord] })
 }
