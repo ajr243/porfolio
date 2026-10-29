@@ -11,9 +11,10 @@ function Log($message) { Add-Content -LiteralPath $log -Value "$(Get-Date -Forma
 $paths = @('index.html','styles.css','script.js','about-me.html','contacts.html','projects.html','skills.html','assets')
 $previous = ''; $changedAt = Get-Date
 function GitRun([string[]]$Arguments) {
-  $result = & git @Arguments 2>&1
+  $ErrorActionPreference = 'Continue'
+  $result = & git -c core.autocrlf=false @Arguments 2>&1
   if ($LASTEXITCODE -ne 0) { throw ($result -join "`n") }
-  return $result
+  return ($result | Where-Object { $_ -isnot [System.Management.Automation.ErrorRecord] })
 }
 try {
   Log 'Watcher started. Publishes tracked production files after 15 seconds without changes.'
