@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6ed">
+  <meta name="description" content="Andrew Russo is an NJIT Mechanical Engineering Technology student who loves travel and golf.">
+  <title>Andrew Russo — Portfolio</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+<style>
+.text-backing, .wordmark, nav a, .site-footer > span, .site-footer > a, .text-link, .email-link, .project-number, .project-kind { background: transparent; padding: 0; border-radius: 0; }
+.theme-toggle { display: none; }
+.site-header { margin-top: 20px; }
+.copy-button { background: transparent; }
+.hero { padding-top: 42px; }
+@media(max-width:600px) { .site-header {margin-top: 12px;} }body, body[data-theme="dark"] { --ink: #fffef7; --accent: #d9edbb; --focus: #fff; }
+.scene-backdrop::after, body[data-theme="dark"] .scene-backdrop::after { background: linear-gradient(90deg, rgba(4,19,13,.87) 0%, rgba(4,19,13,.68) 38%, rgba(4,19,13,.22) 68%, transparent 100%); }
+.hero, .content-section, .contact-section { width: min(100% - 64px, 620px); margin-left: max(32px, calc((100vw - 1080px) / 2)); margin-right: auto; }
+h1 { font-size: clamp(54px,8vw,88px); }
+.project { grid-template-columns: 26px 1fr; gap: 12px; }
+.project-kind { grid-column: 2; }
+.site-header, main, .site-footer { text-shadow: 0 1px 3px rgba(0,0,0,.4); }
+@media(max-width:600px) { .scene-backdrop::after, body[data-theme="dark"] .scene-backdrop::after { background: linear-gradient(90deg,rgba(4,19,13,.8),rgba(4,19,13,.45)); } .hero, .content-section, .contact-section {width: calc(100% - 40px); margin-inline:20px;} }
+</style>
+</head>
+<body>
+
+  <div class="scene-backdrop" aria-hidden="true">
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+    <div class="scene-photo" data-scene-photo></div>
+  </div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Andrew Russo, home">andrew russo<span>!</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#interests">Interests</a>
+      <a href="#contact">Say hello</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      <span data-theme-label>Switch to dark mode</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow"><span class="text-backing">Hello there, I’m</span></p>
+      <h1 id="hero-title"><span class="text-backing">Andrew Russo<span class="period">.</span></span></h1>
+      <p class="hero-copy"><span class="text-backing">An NJIT <strong>Mechanical Engineering Technology</strong> student, born in Oregon, who loves to travel and golf.</span></p>
+      <a class="text-link" href="#interests">A little more about me <span aria-hidden="true">↓</span></a>
+      <span class="sun-doodle" aria-hidden="true">✳</span>
+    </section>
+
+    <section class="content-section" id="about" aria-labelledby="about-title">
+      <p class="eyebrow"><span class="text-backing">A little introduction</span></p>
+      <h2 id="about-title"><span class="text-backing">Engineering, travel, and golf.</span></h2>
+      <p class="section-copy"><span class="text-backing">I’m Andrew Russo, born in Oregon and studying Mechanical Engineering Technology (MET) at NJIT. Outside of college, I love exploring new places and spending time on the golf course.</span></p>
+    </section>
+
+    <section class="content-section work-section" id="interests" aria-labelledby="work-title">
+      <p class="eyebrow"><span class="text-backing">A few things about me</span></p>
+      <h2 id="work-title"><span class="text-backing">What I’m into</span></h2>
+      <div class="project-list">
+        <article class="project">
+          <span class="project-number">01</span>
+          <div>
+            <h3><span class="text-backing">Mechanical Engineering Technology</span></h3>
+            <p><span class="text-backing">I’m pursuing my MET degree at NJIT.</span></p>
+          </div>
+          <span class="project-kind">NJIT</span>
+        </article>
+        <article class="project">
+          <span class="project-number">02</span>
+          <div>
+            <h3><span class="text-backing">Travel</span></h3>
+            <p><span class="text-backing">I’ve driven across the United States and visited more than 30 states. I’ve also traveled abroad once, vacationing in Aruba.</span></p>
+          </div>
+          <span class="project-kind">Exploring</span>
+        </article>
+        <article class="project">
+          <span class="project-number">03</span>
+          <div>
+            <h3><span class="text-backing">Golf</span></h3>
+            <p><span class="text-backing">My personal best for 18 holes is 104, and I try to play once a week during peak golf months.</span></p>
+          </div>
+          <span class="project-kind">On the course</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <p class="eyebrow"><span class="text-backing">Get in touch</span></p>
+      <h2 id="contact-title"><span class="text-backing">Say hello.</span></h2>
+      <a class="email-link" href="mailto:andrewmogoo@outlook.com">andrewmogoo@outlook.com</a>
+      <button class="copy-button" type="button" data-copy-email="andrewmogoo@outlook.com">Copy email</button>
+      <p><span class="text-backing"><a href="mailto:ajr243@njit.edu">ajr243@njit.edu</a> &middot; <a href="tel:+15512066628">551-206-6628</a></span></p><p class="copy-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Made with care by Andrew Russo</span>
+    <span>© <span id="year"></span> Andrew Russo</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+  <aside class="travel-dock" aria-label="Background slideshow">
+    <div class="travel-caption"><span class="caption-kicker">A change of scenery</span><strong data-place>On the fairway</strong><span data-count>01 / 09</span></div>
+    <div class="travel-controls">
+      <button type="button" data-action="previous" aria-label="Previous background" title="Previous background">&#8592;</button>
+      <button type="button" data-action="toggle" aria-label="Pause slideshow" title="Pause slideshow">&#10074;&#10074;</button>
+      <button type="button" data-action="next" aria-label="Next background" title="Next background">&#8594;</button>
+    </div>
+  </aside>
+</body>
+</html>

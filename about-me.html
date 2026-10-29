@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6ed">
+  <meta name="description" content="Learn about Andrew Russo, his NJIT studies, travel, and love of golf.">
+  <title>About Me — Andrew Russo</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="scene-backdrop" aria-hidden="true">
+    <div class="scene-photo is-active" data-scene-photo><img src="./assets/course-texas.jpg" alt=""></div>
+    <div class="scene-photo" data-scene-photo><img src="./assets/course-rockies.jpg" alt=""></div>
+    <div class="scene-photo" data-scene-photo><img src="./assets/course-misty.jpg" alt=""></div>
+    <div class="scene-photo" data-scene-photo><img src="./assets/course-chile.jpg" alt=""></div>
+    <div class="scene-photo" data-scene-photo><img src="./assets/course-cancun.jpg" alt=""></div>
+  </div>
+  <header class="site-header">
+    <a class="wordmark" href="./index.html" aria-label="Andrew Russo, home">andrew russo<span>!</span></a>
+    <nav aria-label="Main navigation">
+      <a href="./index.html">Home</a>
+      <a href="./about-me.html" aria-current="page">About Me</a>
+      <a href="./projects.html">Projects</a>
+      <a href="./skills.html">Skills</a>
+      <a href="./contacts.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle color theme" aria-pressed="false">
+      <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      <span data-theme-label>Switch to dark mode</span>
+    </button>
+  </header>
+
+  <main class="standalone-page" id="top">
+    <section class="page-intro" aria-labelledby="page-title">
+      <p class="eyebrow">A little introduction</p>
+      <h1 id="page-title">About me<span class="period">.</span></h1>
+      <p class="section-copy">I’m Andrew Russo, born in Oregon and studying Mechanical Engineering Technology (MET) at NJIT. I love traveling, exploring new places, and spending time on the golf course.</p>
+    </section>
+    <section class="content-section" aria-labelledby="interests-title">
+      <p class="eyebrow">Outside of class</p>
+      <h2 id="interests-title">Travel and golf</h2>
+      <div class="project-list">
+        <article class="project">
+          <span class="project-number">01</span>
+          <div>
+            <h3>Travel</h3>
+            <p>I’ve driven across the United States and visited more than 30 states. My one trip abroad so far was a vacation in Aruba.</p>
+          </div>
+        </article>
+        <article class="project">
+          <span class="project-number">02</span>
+          <div>
+            <h3>Golf</h3>
+            <p>My personal best for 18 holes is 104, and I try to play once a week during peak golf months.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Made with care by Andrew Russo</span>
+    <span>© <span id="year"></span> Andrew Russo</span>
+    <a href="./index.html">Back to home ↑</a>
+  </footer>
+</body>
+</html>
