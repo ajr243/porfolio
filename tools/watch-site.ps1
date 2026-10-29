@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
 Set-Location -LiteralPath $repo
 $mutex = New-Object Threading.Mutex($false, 'Local\AndrewPortfolioAutoPublish')
-if (!$mutex.WaitOne(0)) { exit }
+try { if (!$mutex.WaitOne(0)) { exit } } catch [Threading.AbandonedMutexException] { <# Prior process stopped; this process owns the mutex now. #> }
 $state = Join-Path $repo '.local'
 New-Item -ItemType Directory -Path $state -Force | Out-Null
 $log = Join-Path $state 'auto-publish.log'
