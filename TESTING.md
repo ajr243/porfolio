@@ -1,0 +1,98 @@
+# Live site test plan and results
+
+Test date: November 2, 2026 (America/New_York).
+
+Site tested: https://ajr243.github.io/porfolio/ . All page loads, interactions, downloads, and Lighthouse audits used the deployed GitHub Pages URLs, not Live Preview or local HTML. Production fixes were pushed and retested after deployment.
+
+## Environment and scope
+
+- Windows; headless installed Google Chrome 156; Playwright 1.64.1; Lighthouse 12.8.2.
+- Phone emulation: 390 × 844 CSS pixels. Laptop viewport: 1366 × 768. These are browser viewport/touch emulation tests, not physical-device tests.
+- Pages: Home (index.html), Interests (interests.html), Skills (skills.html), Projects (projects.html), Contact (contacts.html), and the public About Me page (about-me.html), even though About Me is absent from the main navigation.
+- Each navigation case clicks Home, Interests, Skills, Projects, Contact, the portfolio wordmark, and every internal content/footer link present on that source page. The About Me case also clicks Explore my interests and Back to home. Hash links must target an existing element.
+- Responsive checks scroll each page, check document width and content/control bounds, and save full-page screenshots. Keyboard checks traverse all visible links, buttons, and model stages using Tab, check focus outlines, and use Enter on navigation and footer links and slideshow controls. Project-specific keys and toolbar actions are tested separately.
+- Accessibility acceptance target: Lighthouse Accessibility 100/100, with no failed audit in the returned report, including audits without score weight. This automated score does not establish complete WCAG conformance or replace screen-reader/usability testing.
+- No forms or input fields exist on these pages. Valid/invalid form-input tests are not applicable. Clipboard permission denial, failed images/STL requests, unavailable WebGL, and fullscreen denial are tested instead. Email/phone destinations are checked without sending messages or placing calls.
+- Error scenarios load the live production page and inject browser-side failures or blocked requests; no mocked local site is used. Visibility scheduling uses an overridden document.hidden value plus visibilitychange events. WebGL rendering uses Chrome software rendering in this environment.
+- Theme switching is visible on About Me; the other five pages hide the toggle by design. Persistence and initialization are checked across pages, and storage denial is tested.
+
+## Test cases
+
+For an individual page, append its filename to the site URL above. “Pass” records an executed result, not a planned outcome. See the failure/retest log below for original failures.
+
+| ID | Testing | Steps to run | Expected result | Actual result | Observed result |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| T1 | index.html: every navigation link | Open the live page. Click each header navigation link and wordmark; return and click every internal content/footer link. | Each link reaches its declared page or existing anchor. | Pass | 7 links clicked, including all five main navigation links. |
+| T2 | index.html: phone layout | Open live page at 390×844. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 390×844; document width 390px. |
+| T3 | index.html: laptop layout | Open live page at 1366×768. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 1366×768; document width 1366px. |
+| T4 | index.html: keyboard Tab and Enter | At laptop size, reload. Tab through every visible link, button and model stage. Check visible focus. Activate every navigation link and the footer link with Enter; activate slideshow controls with Enter. | All controls receive focus without a trap; Enter activates links/buttons. | Pass | 10 focusable controls traversed; 7 links activated with Enter. |
+| T5 | interests.html: every navigation link | Open the live page. Click each header navigation link and wordmark; return and click every internal content/footer link. | Each link reaches its declared page or existing anchor. | Pass | 7 links clicked, including all five main navigation links. |
+| T6 | interests.html: phone layout | Open live page at 390×844. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 390×844; document width 390px. |
+| T7 | interests.html: laptop layout | Open live page at 1366×768. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 1366×768; document width 1366px. |
+| T8 | interests.html: keyboard Tab and Enter | At laptop size, reload. Tab through every visible link, button and model stage. Check visible focus. Activate every navigation link and the footer link with Enter; activate slideshow controls with Enter. | All controls receive focus without a trap; Enter activates links/buttons. | Pass | 10 focusable controls traversed; 7 links activated with Enter. |
+| T9 | skills.html: every navigation link | Open the live page. Click each header navigation link and wordmark; return and click every internal content/footer link. | Each link reaches its declared page or existing anchor. | Pass | 7 links clicked, including all five main navigation links. |
+| T10 | skills.html: phone layout | Open live page at 390×844. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 390×844; document width 390px. |
+| T11 | skills.html: laptop layout | Open live page at 1366×768. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 1366×768; document width 1366px. |
+| T12 | skills.html: keyboard Tab and Enter | At laptop size, reload. Tab through every visible link, button and model stage. Check visible focus. Activate every navigation link and the footer link with Enter; activate slideshow controls with Enter. | All controls receive focus without a trap; Enter activates links/buttons. | Pass | 10 focusable controls traversed; 7 links activated with Enter. |
+| T13 | projects.html: every navigation link | Open the live page. Click each header navigation link and wordmark; return and click every internal content/footer link. | Each link reaches its declared page or existing anchor. | Pass | 7 links clicked, including all five main navigation links. |
+| T14 | projects.html: phone layout | Open live page at 390×844. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 390×844; document width 390px. |
+| T15 | projects.html: laptop layout | Open live page at 1366×768. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 1366×768; document width 1366px. |
+| T16 | projects.html: keyboard Tab and Enter | At laptop size, reload. Tab through every visible link, button and model stage. Check visible focus. Activate every navigation link and the footer link with Enter; activate slideshow controls with Enter. | All controls receive focus without a trap; Enter activates links/buttons. | Pass | 66 focusable controls traversed; 7 links activated with Enter. |
+| T17 | contacts.html: every navigation link | Open the live page. Click each header navigation link and wordmark; return and click every internal content/footer link. | Each link reaches its declared page or existing anchor. | Pass | 7 links clicked, including all five main navigation links. |
+| T18 | contacts.html: phone layout | Open live page at 390×844. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 390×844; document width 390px. |
+| T19 | contacts.html: laptop layout | Open live page at 1366×768. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 1366×768; document width 1366px. |
+| T20 | contacts.html: keyboard Tab and Enter | At laptop size, reload. Tab through every visible link, button and model stage. Check visible focus. Activate every navigation link and the footer link with Enter; activate slideshow controls with Enter. | All controls receive focus without a trap; Enter activates links/buttons. | Pass | 15 focusable controls traversed; 7 links activated with Enter. |
+| T21 | about-me.html: every navigation link | Open the live page. Click each header navigation link and wordmark; return and click every internal content/footer link. | Each link reaches its declared page or existing anchor. | Pass | 8 links clicked, including all five main navigation links. |
+| T22 | about-me.html: phone layout | Open live page at 390×844. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 390×844; document width 390px. |
+| T23 | about-me.html: laptop layout | Open live page at 1366×768. Scroll to each section; check readable content and controls remain inside the viewport. Screenshot the page. | No horizontal overflow; content, navigation and controls fit. | Pass | 1366×768; document width 1366px. |
+| T24 | about-me.html: keyboard Tab and Enter | At laptop size, reload. Tab through every visible link, button and model stage. Check visible focus. Activate every navigation link and the footer link with Enter; activate slideshow controls with Enter. | All controls receive focus without a trap; Enter activates links/buttons. | Pass | 9 focusable controls traversed; 7 links activated with Enter. |
+| T25 | Slideshow manual navigation and wraparound | On Home pause playback. Click Previous from 01; click Next; click Next again. | Counter and photo change to 29, 01 and 02. | Pass | 29 → 01 → 02 confirmed. |
+| T26 | Slideshow timer, pause and resume | On Home wait for automatic advance; pause for 10 seconds; resume and wait for another advance. | Advances after 9 seconds; paused slide stays fixed; resume advances. | Pass | Matched expected result. |
+| T27 | Reduced motion and mouse parallax | On Home move mouse, then emulate reduced motion; move mouse and wait 10 seconds. Restore motion preference. | Mouse sets scenery offsets normally; reduced motion resets offsets and pauses slideshow. | Pass | Matched expected result. |
+| T28 | Clipboard success | On Contact click Copy email, then read the clipboard and status. | Clipboard contains personal email; live status announces success. | Pass | Matched expected result. |
+| T29 | Clipboard denied fallback | Deny clipboard writes in the browser, then click Copy email on live Contact. | Friendly fallback appears; mailto link remains available. | Pass | Matched expected result. |
+| T30 | Contact destinations | On Contact inspect both email links, telephone link, and LinkedIn target. | Correct mailto/tel/profile destinations; external profile opens safely in a new tab. | Pass | Matched expected result. |
+| T31 | Theme toggle and persistence | On About Me use Enter on theme toggle; reload and visit Home. Deny storage access and reload. | Theme and aria-pressed update and persist across pages; blocked storage does not break page. | Pass | Matched expected result. |
+| T32 | Footer year on every page | Open each live page and inspect footer year. | Year equals browser current year on all six pages. | Pass | Matched expected result. |
+| T33 | Every model and STL download | On Projects scroll to each model; wait for canvas load; fetch its Download STL destination. | All five viewers load geometry and all STL links return nonempty HTTP 200 responses. | Pass | 7 models and STL downloads passed. |
+| T34 | Every model toolbar, keyboard and mouse controls | For each loaded model click Top/Front/Reset, toggle Auto rotate and Wireframe, enter/exit fullscreen. Rotate with drag and arrows; pan with Shift+arrows; zoom with +/- and wheel; Home resets. Compare canvas before/after. | Each view/input changes rendered geometry; toggle states and fullscreen update. | Pass | Matched expected result. |
+| T35 | Model touch gestures and right-drag pan | On live Projects at phone size load Deck. Use actual browser touch events: one-finger drag, two-finger pinch/pan. At laptop size right-drag the model. | Each gesture changes the rendered view. | Pass | Matched expected result. |
+| T36 | Missing scenery recovery | Block course-rockies.jpg in the browser, open live Home, then press Next. | Failed image is skipped and the next available scenery appears. | Pass | Matched expected result. |
+| T37 | Slideshow background-tab scheduling and pointer leave | On live Home emulate hidden document visibility and dispatch visibilitychange; wait 10 seconds. Restore visibility, wait for advance, then move pointer out of document. | Hidden-page timer stops, visible-page timer resumes, pointer leave resets offsets. | Pass | Matched expected result. |
+| T38 | STL request failure and download fallback | Block Deck STL request in the browser; open live Projects and scroll to Deck. | Viewer announces failed loading and retains the STL download link. | Pass | Matched expected result. |
+| T39 | WebGL unavailable fallback | Before loading live Projects, make WebGL canvas contexts unavailable. | Viewer shows a useful fallback, hides unavailable toolbar and retains download. | Pass | Matched expected result. |
+| T40 | Fullscreen rejection and lost WebGL context | On live Projects load Deck; inject a rejected fullscreen request, click Full screen; dispatch webglcontextlost on its canvas. | Both failures produce helpful status messages. | Pass | Matched expected result. |
+| T41 | index.html: Lighthouse Accessibility | Open live index.html in Chrome. Run Lighthouse → Accessibility → Mobile → Analyze page load (or the CLI below). | Score 100/100; no failed audits. | Pass | Initial 95/100; retest 100/100. No failed audits. |
+| T42 | interests.html: Lighthouse Accessibility | Open live interests.html in Chrome. Run Lighthouse → Accessibility → Mobile → Analyze page load (or the CLI below). | Score 100/100; no failed audits. | Pass | Initial 98/100; retest 100/100. No failed audits. |
+| T43 | skills.html: Lighthouse Accessibility | Open live skills.html in Chrome. Run Lighthouse → Accessibility → Mobile → Analyze page load (or the CLI below). | Score 100/100; no failed audits. | Pass | Initial 94/100; retest 100/100. No failed audits. |
+| T44 | projects.html: Lighthouse Accessibility | Open live projects.html in Chrome. Run Lighthouse → Accessibility → Mobile → Analyze page load (or the CLI below). | Score 100/100; no failed audits. | Pass | Initial 95/100; retest 100/100. No failed audits. |
+| T45 | contacts.html: Lighthouse Accessibility | Open live contacts.html in Chrome. Run Lighthouse → Accessibility → Mobile → Analyze page load (or the CLI below). | Score 100/100; no failed audits. | Pass | Initial 94/100; retest 100/100. No failed audits. |
+| T46 | about-me.html: Lighthouse Accessibility | Open live about-me.html in Chrome. Run Lighthouse → Accessibility → Mobile → Analyze page load (or the CLI below). | Score 100/100; no failed audits. | Pass | Initial 100/100; retest 100/100. No failed audits. |
+
+## Failure and retest log
+
+| Check | Original result | Fix | Live retest result |
+| :-- | :-- | :-- | :-- |
+| Home Accessibility | Fail: 95/100; color-contrast | Set the underlying body paint on scenery pages to the dark color used behind their light text, instead of a pale fallback (126fe88). | Pass: 100/100. |
+| Interests Accessibility | Fail: 98/100; heading-order (h1 followed by h3). | Change interest headings to h2 and preserve their existing visual size (126fe88). | Pass: 100/100. |
+| Skills Accessibility | Fail: 94/100; color-contrast. | Dark fallback paint (126fe88). | Pass: 100/100. |
+| Projects Accessibility | Fail: 95/100; color-contrast. | Dark fallback paint (126fe88). | Pass: 100/100. |
+| Contact Accessibility | Fail: 94/100; color-contrast and label-content-name-mismatch. | Dark fallback paint; LinkedIn accessible name now includes visible “Connect with Andrew” text (126fe88, 485dec7). | Pass: 100/100; both audits pass. |
+| About Me Accessibility | Fail against the no-failed-audits criterion: weighted score was already 100/100, but label-content-name-mismatch failed. | Update the theme button accessible name with its visible “Switch to … mode” text (485dec7). | Pass: 100/100, no failed audits. |
+| WebGL unavailable fallback | Fail: helpful fallback appeared, but the unusable toolbar stayed visible. Its display:flex rule overrode the HTML hidden attribute. | Add .cad-toolbar[hidden] { display: none; } (6e9e5f3). | Pass: toolbar hidden, fallback and download visible. |
+
+The first automation run also hit test-script issues: navigation to the current URL was considered complete before its reload finished; identical toolbar HTML was counted as the same keyboard target; the fullscreen assertion ran before fullscreenchange. The runner now waits for navigation completion, tracks distinct DOM targets, and waits for the fullscreen label update. These were corrected and rerun; they are not recorded as site defects.
+
+## Repeating the tests
+
+Run the table steps against the live URL, using Chrome device emulation for the listed dimensions. For keyboard checks, start at a fresh page, use Tab (and Shift+Tab to reverse) and Enter; ensure focus remains visible. On each of the seven project models, repeat the toolbar and model-input steps rather than checking only the first model.
+
+For a reproducible Lighthouse audit with Lighthouse 12.8.2 installed, run the following for each of the six filenames (replace index.html and report filename). Chrome must be installed; set CHROME_PATH if it cannot be found:
+
+```sh
+npx lighthouse https://ajr243.github.io/porfolio/index.html --only-categories=accessibility --chrome-flags="--headless --enable-unsafe-swiftshader" --output=json --output-path=lighthouse-index.json
+```
+
+The automated runs used Lighthouse's default mobile configuration. Read categories.accessibility.score × 100 and inspect failed audits, including unweighted audits. Keep the original failed result, apply any fix, wait for GitHub Pages deployment, and rerun the affected tests on the live site before updating this document.
+
+Detailed browser screenshots, JSON results, downloaded test tools, and Lighthouse reports were kept in ignored .local/site-testing/ during execution; they are not published as website assets. This file records their results and the steps needed to repeat them.
