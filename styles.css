@@ -431,6 +431,14 @@ h2 {
 body { isolation: isolate; padding-bottom: 120px; }
 .scene-backdrop { z-index: -1; }
 .scene-photo:first-child { background-image: url('./assets/course-texas.jpg'); }
+.scene-photo:nth-child(2) { background-image: url('./assets/course-rockies.jpg'); }
+.scene-photo:nth-child(3) { background-image: url('./assets/course-misty.jpg'); }
+.scene-photo:nth-child(4) { background-image: url('./assets/course-chile.jpg'); }
+.scene-photo:nth-child(5) { background-image: url('./assets/course-cancun.jpg'); }
+.scene-photo:nth-child(6) { background-image: url('./assets/coast.jpg'); }
+.scene-photo:nth-child(7) { background-image: url('./assets/dolomites.jpg'); }
+.scene-photo:nth-child(8) { background-image: url('./assets/mountains.jpg'); }
+.scene-photo:nth-child(9) { background-image: url('./assets/ocean.jpg'); }
 section[id] { scroll-margin-top: 24px; }
 .site-header { gap: 20px; flex-wrap: wrap; padding-block: 14px; }
 .hero-copy { max-width: 560px; }

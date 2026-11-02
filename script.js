@@ -1,5 +1,5 @@
 const photos = [...document.querySelectorAll('[data-scene-photo]')];
-const scenes = ['Texas fairway', 'Rocky Mountain green', 'Morning at the course', 'Los Angeles, Chile', 'Cancun, Mexico'];
+const scenes = ['Texas fairway', 'Rocky Mountain green', 'Morning at the course', 'Los Angeles, Chile', 'Cancun, Mexico', 'Along the coast', 'The Dolomites', 'Mountain views', 'By the ocean'];
 const motion = matchMedia('(prefers-reduced-motion: reduce)');
 const toggle = document.querySelector('[data-action="toggle"]');
 const root = document.documentElement;
