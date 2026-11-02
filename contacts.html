@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f4f6ed">
-  <meta name="description" content="Contact Andrew Russo by phone, personal email, or NJIT email.">
+  <meta name="description" content="Get in touch with Andrew Russo through personal email, NJIT email, phone, or LinkedIn.">
   <title>Contact | Andrew Russo</title>
   <link rel="stylesheet" href="./styles.css?v=portfolio-pages-1">
   <script src="./script.js?v=scenery-29-3" defer></script>
@@ -22,6 +22,17 @@ h1 { font-size: clamp(54px,8vw,88px); }
 .project-kind { grid-column: 2; }
 .site-header, main, .site-footer { text-shadow: 0 1px 3px rgba(0,0,0,.4); }
 @media(max-width:600px) { .scene-backdrop::after, body[data-theme="dark"] .scene-backdrop::after { background: linear-gradient(90deg,rgba(4,19,13,.8),rgba(4,19,13,.45)); } .hero, .content-section, .contact-section {width: calc(100% - 40px); margin-inline:20px;} }
+.contact-intro { margin: 0 0 32px; max-width: 440px; color: #e1e8dc; font-size: 18px; }
+.contact-methods { display: grid; gap: 16px; }
+.contact-method { padding: 24px 28px; border: 1px solid rgba(217,237,187,.28); border-radius: 12px; background: rgba(7,25,17,.78); }
+.contact-method h2 { margin: 0 0 10px; color: var(--accent); font-family: var(--font-body); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+.contact-value { display: inline-block; max-width: 100%; font-size: clamp(18px, 3vw, 23px); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 6px; overflow-wrap: anywhere; }
+.contact-value:hover { color: var(--accent); }
+.contact-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+.contact-method .copy-button { min-height: 44px; border-color: rgba(217,237,187,.5); border-radius: 6px; }
+.contact-method .copy-status:empty { display: none; }
+.contact-method p { margin: 10px 0 0; color: #e1e8dc; font-size: 14px; }
+@media(max-width:600px) { .contact-intro { font-size: 16px; margin-bottom: 24px; } .contact-method { padding: 22px 20px; } }
 </style>
 </head>
 <body>
@@ -48,10 +59,30 @@ h1 { font-size: clamp(54px,8vw,88px); }
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <p class="eyebrow"><span class="text-backing">Get in touch</span></p>
       <h1 id="contact-title"><span class="text-backing">Contact.</span></h1>
-      <a class="email-link" href="mailto:andrewmogoo@outlook.com">andrewmogoo@outlook.com</a>
-      <button class="copy-button" type="button" data-copy-email="andrewmogoo@outlook.com">Copy email</button>
-      <p><a class="text-link" href="https://www.linkedin.com/in/andrew-russo-a60a1843b/" target="_blank" rel="noopener noreferrer" aria-label="Andrew Russo on LinkedIn (opens in a new tab)">LinkedIn: linkedin.com/in/andrew-russo-a60a1843b</a></p>
-      <p><span class="text-backing"><a href="mailto:ajr243@njit.edu">ajr243@njit.edu</a> &middot; <a href="tel:+15512066628">551-206-6628</a></span></p><p class="copy-status" role="status" aria-live="polite"></p>
+      <p class="contact-intro">Have a question or want to connect? Choose the way that works best for you.</p>
+      <div class="contact-methods">
+        <section class="contact-method" aria-labelledby="personal-email-title">
+          <h2 id="personal-email-title">Personal email</h2>
+          <div class="contact-actions">
+            <a class="contact-value" href="mailto:andrewmogoo@outlook.com">andrewmogoo@outlook.com</a>
+            <button class="copy-button" type="button" data-copy-email="andrewmogoo@outlook.com">Copy email</button>
+          </div>
+          <p class="copy-status" role="status" aria-live="polite"></p>
+        </section>
+        <section class="contact-method" aria-labelledby="njit-email-title">
+          <h2 id="njit-email-title">NJIT email</h2>
+          <a class="contact-value" href="mailto:ajr243@njit.edu">ajr243@njit.edu</a>
+        </section>
+        <section class="contact-method" aria-labelledby="phone-title">
+          <h2 id="phone-title">Phone</h2>
+          <a class="contact-value" href="tel:+15512066628">551-206-6628</a>
+        </section>
+        <section class="contact-method" aria-labelledby="linkedin-title">
+          <h2 id="linkedin-title">LinkedIn</h2>
+          <a class="contact-value" href="https://www.linkedin.com/in/andrew-russo-a60a1843b/" target="_blank" rel="noopener noreferrer" aria-label="Andrew Russo on LinkedIn (opens in a new tab)">Connect with Andrew &nearr;</a>
+          <p>Find me on LinkedIn for professional connections.</p>
+        </section>
+      </div>
     </section>
   </main>
 
