@@ -125,6 +125,7 @@ const themeToggle = document.querySelector('.theme-toggle');
 function setTheme(dark) {
   document.body.dataset.theme = dark ? 'dark' : 'light';
   themeToggle?.setAttribute('aria-pressed', String(dark));
+  themeToggle?.setAttribute('aria-label', `Switch to ${dark ? 'light' : 'dark'} mode`);
   const label = themeToggle?.querySelector('[data-theme-label]'), icon = themeToggle?.querySelector('.theme-toggle-icon');
   if (label) label.textContent = `Switch to ${dark ? 'light' : 'dark'} mode`;
   if (icon) icon.textContent = dark ? '\u2600' : '\u263e';
