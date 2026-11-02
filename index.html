@@ -22,6 +22,13 @@ h1 { font-size: clamp(54px,8vw,88px); }
 .project-kind { grid-column: 2; }
 .site-header, main, .site-footer { text-shadow: 0 1px 3px rgba(0,0,0,.4); }
 @media(max-width:600px) { .scene-backdrop::after, body[data-theme="dark"] .scene-backdrop::after { background: linear-gradient(90deg,rgba(4,19,13,.8),rgba(4,19,13,.45)); } .hero, .content-section, .contact-section {width: calc(100% - 40px); margin-inline:20px;} }
+.resume-entry { padding: 24px 0; border-top: 1px solid rgba(255,254,247,.28); }
+.resume-entry:last-child { padding-bottom: 0; }
+.resume-entry h3 { margin: 0 0 6px; font-size: clamp(22px, 4vw, 28px); overflow-wrap: break-word; }
+.resume-role { margin: 0 0 4px; font-weight: 700; }
+.resume-meta { margin: 0 0 12px; color: var(--accent); font-size: 14px; }
+.resume-entry ul { margin: 0; padding-left: 20px; line-height: 1.8; }
+.resume-entry li + li { margin-top: 8px; }
 </style>
 </head>
 <body>
@@ -62,6 +69,58 @@ h1 { font-size: clamp(54px,8vw,88px); }
 
 
 
+    <section class="content-section resume-section" id="experience" aria-labelledby="experience-title">
+      <p class="eyebrow">From my resume</p>
+      <h2 id="experience-title">Work experience.</h2>
+      <article class="resume-entry">
+        <h3>Diktas Schandler Gillen</h3>
+        <p class="resume-role">File Shredder</p>
+        <p class="resume-meta">Cliffside Park, NJ &middot; Jun 2026&ndash;Present</p>
+        <ul>
+          <li>Shred old case files for a law firm, clearing space for future files.</li>
+        </ul>
+      </article>
+      <article class="resume-entry">
+        <h3>Market Basket</h3>
+        <p class="resume-role">Restocker / Cashier</p>
+        <p class="resume-meta">Franklin Lakes, NJ &middot; Jan&ndash;Aug 2026</p>
+        <ul>
+          <li>Restocked the Dairy/Frozen and Grocery departments, maintaining organized, presentable displays.</li>
+          <li>Placed orders with Dairy/Frozen suppliers to maintain effective stock levels.</li>
+          <li>Operated the cash register and provided backup cashier support when needed.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="content-section resume-section" id="activities" aria-labelledby="activities-title">
+      <p class="eyebrow">Beyond the classroom</p>
+      <h2 id="activities-title">Extracurricular activities.</h2>
+      <article class="resume-entry">
+        <h3>PCTI Football</h3>
+        <p class="resume-meta">PCTI, Wayne, NJ &middot; Aug 2022&ndash;Dec 2025</p>
+        <ul>
+          <li>Played one year on the freshman team, two years on junior varsity, and one year on varsity.</li>
+          <li>Reached the state finals twice and earned championship rings in 2023 and 2025.</li>
+        </ul>
+      </article>
+      <article class="resume-entry">
+        <h3>North Haledon Volunteer Fire Department</h3>
+        <p class="resume-meta">North Haledon, NJ &middot; Feb 2025&ndash;Present</p>
+        <ul>
+          <li>Participate in Monday night drills and help with tasks around the firehouse.</li>
+          <li>Volunteer at fundraising events and community activities around North Haledon.</li>
+          <li>Occasionally attend fire calls and assist firefighters with basic support tasks.</li>
+        </ul>
+      </article>
+      <article class="resume-entry">
+        <h3>Mayers Karate &amp; Fitness</h3>
+        <p class="resume-meta">North Haledon, NJ &middot; Jan 2023&ndash;Dec 2025</p>
+        <ul>
+          <li>Earned a purple belt through training in karate techniques, forms, and fighting styles.</li>
+          <li>Participated in Thursday night padded sparring, building mental discipline and endurance.</li>
+        </ul>
+      </article>
+    </section>
   </main>
 
   <footer class="site-footer">
