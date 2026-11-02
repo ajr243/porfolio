@@ -46,12 +46,13 @@ function loadPhoto(index) {
     const image = photo.querySelector('img') || new Image();
     image.alt = '';
     image.decoding = 'async';
-    image.onload = () => resolve(image);
+    const finish = () => image.decode().then(() => resolve(image), reject);
+    image.onload = finish;
     image.onerror = () => reject(new Error(`Unable to load scenery ${index + 1}`));
     if (!image.getAttribute('src')) image.src = `./assets/${scenes[index][0]}.jpg`;
     if (!image.parentNode) photo.append(image);
     if (image.complete) {
-      if (image.naturalWidth) resolve(image);
+      if (image.naturalWidth) finish();
       else reject(new Error(`Unable to load scenery ${index + 1}`));
     }
   });
