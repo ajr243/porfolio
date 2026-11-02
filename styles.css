@@ -52,7 +52,7 @@ button:focus-visible {
 
 .scene-backdrop {
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   overflow: hidden;
   background:
@@ -63,6 +63,7 @@ button:focus-visible {
 
 .scene-backdrop::after {
   position: absolute;
+  z-index: 1;
   inset: 0;
   background: linear-gradient(115deg, rgba(247, 249, 242, 0.22), rgba(235, 242, 231, 0.04) 60%, rgba(17, 35, 29, 0.14));
   content: "";
@@ -85,6 +86,13 @@ body[data-theme="dark"] .scene-backdrop::after {
 
 .scene-photo.is-active {
   opacity: 1;
+}
+
+.scene-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .site-header,
@@ -427,18 +435,9 @@ h2 {
   }
 }
 
-/* Keep the scenery behind the page without placing it behind the body. */
+/* Keep the scenery above the body paint and below the page content. */
 body { isolation: isolate; padding-bottom: 120px; }
-.scene-backdrop { z-index: -1; }
-.scene-photo:first-child { background-image: url('./assets/course-texas.jpg'); }
-.scene-photo:nth-child(2) { background-image: url('./assets/course-rockies.jpg'); }
-.scene-photo:nth-child(3) { background-image: url('./assets/course-misty.jpg'); }
-.scene-photo:nth-child(4) { background-image: url('./assets/course-chile.jpg'); }
-.scene-photo:nth-child(5) { background-image: url('./assets/course-cancun.jpg'); }
-.scene-photo:nth-child(6) { background-image: url('./assets/coast.jpg'); }
-.scene-photo:nth-child(7) { background-image: url('./assets/dolomites.jpg'); }
-.scene-photo:nth-child(8) { background-image: url('./assets/mountains.jpg'); }
-.scene-photo:nth-child(9) { background-image: url('./assets/ocean.jpg'); }
+.site-header, main, .site-footer { position: relative; z-index: 1; }
 section[id] { scroll-margin-top: 24px; }
 .site-header { gap: 20px; flex-wrap: wrap; padding-block: 14px; }
 .hero-copy { max-width: 560px; }
