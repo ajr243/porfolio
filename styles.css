@@ -130,6 +130,7 @@ body[data-theme="dark"] .scene-backdrop::after {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 28px;
 }
 
