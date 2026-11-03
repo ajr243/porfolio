@@ -54,7 +54,6 @@ function createViewer(root) {
       mesh = new THREE.Mesh(geometry, material);
       scene.add(mesh);
       grid.position.y = -size.y * (2.5 / longest) / 2 - 0.025;
-      root.querySelector('[data-cad-details]').textContent = `Explore the surfaces and geometry of my CAD model. ${Math.round(geometry.attributes.position.count / 3).toLocaleString()} triangles in the exported STL mesh. Use wireframe to inspect the geometry.`;
       status.hidden = true;
       stage.dataset.loaded = 'true';
       view();
