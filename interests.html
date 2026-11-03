@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#f4f6ed">
   <meta name="description" content="Andrew Russoâ€™s interests in Mechanical Engineering Technology, travel, and golf.">
   <title>Interests â€” Andrew Russo</title>
-  <link rel="stylesheet" href="./styles.css?v=portfolio-unified-2">
-  <script src="./script.js?v=scenery-29-3" defer></script>
+  <link rel="stylesheet" href="./styles.css?v=mobile-menu-1">
+  <script src="./script.js?v=mobile-menu-1" defer></script>
 </head>
 <body class="scenic-page">
 
@@ -16,7 +16,11 @@
   </div>
   <header class="site-header">
     <a class="wordmark" href="./index.html" aria-label="My Portfolio, home">My Portfolio</a>
-    <nav aria-label="Main navigation">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>
+      <span data-menu-icon aria-hidden="true">&#9776;</span>
+      <span data-menu-label>Menu</span>
+    </button>
+    <nav class="site-nav" id="site-navigation" aria-label="Main navigation">
       <a href="./index.html">Home</a>
       <a href="./interests.html" aria-current="page">Interests</a>
       <a href="./skills.html">Skills</a>

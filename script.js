@@ -1,3 +1,44 @@
+// Mobile navigation is a disclosure; links stay available if JavaScript is disabled.
+const menuButton = document.querySelector('.menu-toggle');
+const siteNavigation = document.querySelector('#site-navigation');
+if (menuButton && siteNavigation) {
+  const mobileNavigation = matchMedia('(max-width: 800px)');
+  function setMenuOpen(open) {
+    menuButton.setAttribute('aria-expanded', String(open));
+    menuButton.querySelector('[data-menu-label]').textContent = open ? 'Close menu' : 'Menu';
+    menuButton.querySelector('[data-menu-icon]').textContent = open ? '\u00d7' : '\u2630';
+    siteNavigation.hidden = mobileNavigation.matches && !open;
+  }
+  function syncNavigation() {
+    const focusedLink = siteNavigation.contains(document.activeElement);
+    const focusedButton = document.activeElement === menuButton;
+    menuButton.hidden = !mobileNavigation.matches;
+    setMenuOpen(false);
+    if (mobileNavigation.matches && focusedLink) menuButton.focus();
+    if (!mobileNavigation.matches && focusedButton) siteNavigation.querySelector('a')?.focus();
+  }
+  menuButton.addEventListener('click', () => {
+    setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+  });
+  siteNavigation.addEventListener('click', event => {
+    if (event.target.closest('a')) setMenuOpen(false);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+      setMenuOpen(false);
+      menuButton.focus();
+    }
+  });
+  document.addEventListener('click', event => {
+    if (menuButton.getAttribute('aria-expanded') === 'true' && !event.target.closest('.site-header')) {
+      const focusedLink = siteNavigation.contains(document.activeElement);
+      setMenuOpen(false);
+      if (focusedLink) menuButton.focus();
+    }
+  });
+  mobileNavigation.addEventListener('change', syncNavigation);
+  syncNavigation();
+}
 const scenes = [
   ['course-texas', 'Texas fairway'],
   ['course-rockies', 'Rocky Mountain green'],
